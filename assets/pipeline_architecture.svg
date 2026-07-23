@@ -1,0 +1,163 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 480" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradient -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0b0f19"/>
+      <stop offset="100%" stop-color="#111827"/>
+    </linearGradient>
+
+    <!-- Card Backgrounds -->
+    <linearGradient id="cardGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e293b"/>
+      <stop offset="100%" stop-color="#0f172a"/>
+    </linearGradient>
+
+    <linearGradient id="cardGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#311b92"/>
+      <stop offset="100%" stop-color="#1a237e"/>
+    </linearGradient>
+
+    <linearGradient id="cardGrad3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#064e3b"/>
+      <stop offset="100%" stop-color="#022c22"/>
+    </linearGradient>
+
+    <linearGradient id="glowLine" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="50%" stop-color="#818cf8"/>
+      <stop offset="100%" stop-color="#34d399"/>
+    </linearGradient>
+
+    <!-- Drop Shadows -->
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="8" stdDeviation="10" flood-color="#000000" flood-opacity="0.6"/>
+    </filter>
+  </defs>
+
+  <!-- Base Canvas -->
+  <rect width="1200" height="480" fill="url(#bgGrad)" rx="16"/>
+
+  <!-- Title & Section Label -->
+  <g transform="translate(60, 45)">
+    <text x="0" y="0" font-family="'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="700" fill="#38bdf8" letter-spacing="2">SYSTEM ARCHITECTURE &amp; DATA FLOW</text>
+    <text x="0" y="28" font-family="'Segoe UI', Roboto, sans-serif" font-size="24" font-weight="800" fill="#ffffff">End-to-End Predictive Maintenance Pipeline</text>
+  </g>
+
+  <!-- Connecting Flow Lines -->
+  <g opacity="0.8">
+    <!-- Line 1 to 2 -->
+    <path d="M 270 230 L 330 230" stroke="url(#glowLine)" stroke-width="3" stroke-dasharray="6 4"/>
+    <polygon points="335,230 325,225 325,235" fill="#38bdf8"/>
+
+    <!-- Line 2 to 3 -->
+    <path d="M 540 230 L 600 230" stroke="url(#glowLine)" stroke-width="3" stroke-dasharray="6 4"/>
+    <polygon points="605,230 595,225 595,235" fill="#818cf8"/>
+
+    <!-- Line 3 to 4 -->
+    <path d="M 870 230 L 930 230" stroke="url(#glowLine)" stroke-width="3" stroke-dasharray="6 4"/>
+    <polygon points="935,230 925,225 925,235" fill="#34d399"/>
+  </g>
+
+  <!-- STAGE 1: Data Ingestion -->
+  <g transform="translate(60, 120)" filter="url(#shadow)">
+    <rect width="210" height="230" rx="14" fill="url(#cardGrad1)" stroke="#38bdf8" stroke-width="1.5"/>
+    <rect x="15" y="15" width="180" height="28" rx="6" fill="#38bdf8" fill-opacity="0.15"/>
+    <text x="105" y="34" font-family="'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="700" fill="#38bdf8" text-anchor="middle">STAGE 1: INGESTION</text>
+    
+    <text x="20" y="72" font-family="'Segoe UI', Roboto, sans-serif" font-size="15" font-weight="700" fill="#ffffff">NASA C-MAPSS Stream</text>
+    <text x="20" y="92" font-family="'Segoe UI', Roboto, sans-serif" font-size="11" fill="#94a3b8">Run-to-failure engine data</text>
+
+    <!-- Bullet items -->
+    <g font-family="'Segoe UI', Roboto, sans-serif" font-size="12" fill="#cbd5e1">
+      <circle cx="30" cy="120" r="4" fill="#38bdf8"/>
+      <text x="42" y="124">21 Sensor Telemetry</text>
+
+      <circle cx="30" cy="145" r="4" fill="#38bdf8"/>
+      <text x="42" y="149">3 Operational Settings</text>
+
+      <circle cx="30" cy="170" r="4" fill="#38bdf8"/>
+      <text x="42" y="174">100 Training Fleet</text>
+
+      <circle cx="30" cy="195" r="4" fill="#38bdf8"/>
+      <text x="42" y="199">Cycle Time-Series</text>
+    </g>
+  </g>
+
+  <!-- STAGE 2: Feature Engineering -->
+  <g transform="translate(330, 120)" filter="url(#shadow)">
+    <rect width="210" height="230" rx="14" fill="url(#cardGrad1)" stroke="#818cf8" stroke-width="1.5"/>
+    <rect x="15" y="15" width="180" height="28" rx="6" fill="#818cf8" fill-opacity="0.15"/>
+    <text x="105" y="34" font-family="'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="700" fill="#818cf8" text-anchor="middle">STAGE 2: FEATURES</text>
+
+    <text x="20" y="72" font-family="'Segoe UI', Roboto, sans-serif" font-size="15" font-weight="700" fill="#ffffff">Signal Aggregation</text>
+    <text x="20" y="92" font-family="'Segoe UI', Roboto, sans-serif" font-size="11" fill="#94a3b8">Rolling window statistics</text>
+
+    <!-- Bullet items -->
+    <g font-family="'Segoe UI', Roboto, sans-serif" font-size="12" fill="#cbd5e1">
+      <circle cx="30" cy="120" r="4" fill="#818cf8"/>
+      <text x="42" y="124">5-Cycle Rolling Mean (av)</text>
+
+      <circle cx="30" cy="145" r="4" fill="#818cf8"/>
+      <text x="42" y="149">Rolling Std Dev (sd)</text>
+
+      <circle cx="30" cy="170" r="4" fill="#818cf8"/>
+      <text x="42" y="174">Multicollinearity Filter</text>
+
+      <circle cx="30" cy="195" r="4" fill="#818cf8"/>
+      <text x="42" y="199">Total: 45 Features</text>
+    </g>
+  </g>
+
+  <!-- STAGE 3: Tri-Model AI Engine -->
+  <g transform="translate(600, 100)" filter="url(#shadow)">
+    <rect width="270" height="270" rx="14" fill="url(#cardGrad2)" stroke="#c084fc" stroke-width="1.5"/>
+    <rect x="20" y="15" width="230" height="28" rx="6" fill="#c084fc" fill-opacity="0.2"/>
+    <text x="135" y="34" font-family="'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="700" fill="#c084fc" text-anchor="middle">STAGE 3: TRI-MODEL AI</text>
+
+    <!-- Sub-Model 1 -->
+    <g transform="translate(20, 60)">
+      <rect width="230" height="55" rx="8" fill="#1e1b4b" stroke="#818cf8" stroke-width="1"/>
+      <text x="12" y="24" font-family="'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="700" fill="#38bdf8">1. RUL Regression</text>
+      <text x="12" y="42" font-family="'Segoe UI', Roboto, sans-serif" font-size="11" fill="#94a3b8">Predict exact remaining cycles (RF/Poly)</text>
+    </g>
+
+    <!-- Sub-Model 2 -->
+    <g transform="translate(20, 125)">
+      <rect width="230" height="55" rx="8" fill="#1e1b4b" stroke="#818cf8" stroke-width="1"/>
+      <text x="12" y="24" font-family="'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="700" fill="#f43f5e">2. Binary Classification</text>
+      <text x="12" y="42" font-family="'Segoe UI', Roboto, sans-serif" font-size="11" fill="#94a3b8">Failure in 30-cycle window (AUC: 98.45%)</text>
+    </g>
+
+    <!-- Sub-Model 3 -->
+    <g transform="translate(20, 190)">
+      <rect width="230" height="55" rx="8" fill="#1e1b4b" stroke="#818cf8" stroke-width="1"/>
+      <text x="12" y="24" font-family="'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="700" fill="#a855f7">3. Neural Network MLP</text>
+      <text x="12" y="42" font-family="'Segoe UI', Roboto, sans-serif" font-size="11" fill="#94a3b8">Multi-class risk rating (&lt;=15d, 30d, Normal)</text>
+    </g>
+  </g>
+
+  <!-- STAGE 4: Operational Dispatch -->
+  <g transform="translate(930, 120)" filter="url(#shadow)">
+    <rect width="210" height="230" rx="14" fill="url(#cardGrad3)" stroke="#34d399" stroke-width="1.5"/>
+    <rect x="15" y="15" width="180" height="28" rx="6" fill="#34d399" fill-opacity="0.15"/>
+    <text x="105" y="34" font-family="'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="700" fill="#34d399" text-anchor="middle">STAGE 4: ACTION</text>
+
+    <text x="20" y="72" font-family="'Segoe UI', Roboto, sans-serif" font-size="15" font-weight="700" fill="#ffffff">Maintenance Dispatch</text>
+    <text x="20" y="92" font-family="'Segoe UI', Roboto, sans-serif" font-size="11" fill="#94a3b8">Optimized capacity planning</text>
+
+    <!-- Bullet items -->
+    <g font-family="'Segoe UI', Roboto, sans-serif" font-size="12" fill="#cbd5e1">
+      <circle cx="30" cy="120" r="4" fill="#34d399"/>
+      <text x="42" y="124">Zero Flight Delays</text>
+
+      <circle cx="30" cy="145" r="4" fill="#34d399"/>
+      <text x="42" y="149">Capacity Queue Optimization</text>
+
+      <circle cx="30" cy="170" r="4" fill="#34d399"/>
+      <text x="42" y="174">Cost Matrix Minimization</text>
+
+      <circle cx="30" cy="195" r="4" fill="#34d399"/>
+      <text x="42" y="199">Fleet Overhaul Alerts</text>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,16 @@
+{
+    "regression": {
+        "rmse": 34.35612064829206,
+        "r2": 0.31648398582035364,
+        "mae": 23.157399999999992
+    },
+    "binary_classification": {
+        "auc_roc": 0.9845333333333333,
+        "precision": 0.9444444444444444,
+        "recall": 0.68,
+        "f1": 0.7906976744186046
+    },
+    "multiclass_classification": {
+        "accuracy": 0.75
+    }
+}
